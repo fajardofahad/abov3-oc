@@ -286,7 +286,7 @@ export default new Hono<{ Bindings: Env }>()
     }
   })
   /**
-   * Used by the opencode CLI to check if the GitHub app is installed
+   * Used by the ABOV3 CLI to check if the GitHub app is installed
    */
   .get("/get_github_app_installation", async (c) => {
     const owner = c.req.query("owner")

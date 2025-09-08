@@ -2,15 +2,15 @@ const stage = process.env.SST_STAGE || "dev"
 
 export default {
   url: stage === "production"
-    ? "https://opencode.ai"
-    : `https://${stage}.opencode.ai`,
+    ? "https://abov3.ai"
+    : `https://${stage}.abov3.ai`,
   console: stage === "production"
-    ? "https://opencode.ai/auth"
-    : `https://${stage}.opencode.ai/auth`,
+    ? "https://abov3.ai/auth"
+    : `https://${stage}.abov3.ai/auth`,
   email: "contact@anoma.ly",
   socialCard: "https://social-cards.sst.dev",
-  github: "https://github.com/sst/opencode",
-  discord: "https://opencode.ai/discord",
+  github: "https://github.com/fajardofahad/abov3-genesis-codeforger",
+  discord: "https://abov3.ai/discord",
   headerLinks: [
     { name: "Home", url: "/" },
     { name: "Docs", url: "/docs/" },

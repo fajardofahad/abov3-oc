@@ -19,7 +19,7 @@ const batches = {
   2: [
     // examples and imports in JS/TS
     { from: "from \"opencode/", to: "from \"abov3/" },
-    { from: "require('opencode/", to: "require('abov3/" },
+    { from: "require('abov3/", to: "require('abov3/" },
   ],
 }
 

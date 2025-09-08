@@ -12,7 +12,7 @@ import (
 	"github.com/muesli/ansi"
 	"github.com/muesli/reflow/truncate"
 	"github.com/muesli/termenv"
-	"github.com/sst/opencode/internal/util"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/util"
 )
 
 var (

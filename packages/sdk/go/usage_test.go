@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/sst/opencode-sdk-go"
-	"github.com/sst/opencode-sdk-go/internal/testutil"
-	"github.com/sst/opencode-sdk-go/option"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/testutil"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/option"
 )
 
 func TestUsage(t *testing.T) {

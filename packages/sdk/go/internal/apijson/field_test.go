@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sst/opencode-sdk-go/internal/param"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/param"
 )
 
 type Struct struct {

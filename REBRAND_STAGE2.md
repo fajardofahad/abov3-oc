@@ -21,7 +21,7 @@ Batch strategy (recommended)
 - Batch 2: Internal package renames and examples
   - Replace JS/TS imports that use `opencode/...` to `abov3/...` where appropriate (careful with Go import paths — handle in a later batch).
 - Batch 3: Go module path & binary rename (risky)
-  - Rename Go import paths `github.com/sst/opencode` → `github.com/fajardofahad/abov3-oc` OR update module uses to the new module. Do this only after JS packages are published or via a well-tested CI job.
+  - Rename Go import paths `github.com/fajardofahad/abov3-genesis-codeforger` → `github.com/fajardofahad/abov3-oc` OR update module uses to the new module. Do this only after JS packages are published or via a well-tested CI job.
 
 Safety rules
 - Never hand-edit lockfiles. CI will run the package manager to regenerate them.

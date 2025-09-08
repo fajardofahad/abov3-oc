@@ -1,34 +1,30 @@
----
 title: SDK
-description: Type-safe JS client for opencode server.
----
+description: Type-safe JS client for the ABOV3 server.
 
 import config from "../../../config.mjs"
 export const typesUrl = `${config.github}/blob/dev/packages/sdk/js/src/gen/types.gen.ts`
 
-The opencode JS/TS SDK provides a type-safe client for interacting with the server.
-Use it to build integrations and control opencode programmatically.
+The ABOV3 JS/TS SDK provides a type-safe client for interacting with the server.
+Use it to build integrations and control abov3 programmatically.
 
 [Learn more](/docs/server) about how the server works.
 
----
 
 ## Install
 
 Install the SDK from npm:
 
 ```bash
-npm install @opencode-ai/sdk
+npm install @abov3-ai/sdk
 ```
 
----
 
 ## Create client
 
 Create a client instance to connect to your server:
 
 ```javascript
-import { createOpencodeClient } from "@opencode-ai/sdk"
+import { createOpencodeClient } from "@abov3-ai/sdk"
 
 const client = createOpencodeClient({
   baseUrl: "http://localhost:4096",
@@ -46,14 +42,13 @@ const client = createOpencodeClient({
 | `responseStyle` | `string`   | Return style: `data` or `fields` | `fields`                |
 | `throwOnError`  | `boolean`  | Throw errors instead of return   | `false`                 |
 
----
 
 ## Start server
 
-You can also programmatically start an opencode server:
+You can also programmatically start an abov3 server:
 
 ```javascript
-import { createOpencodeServer } from "@opencode-ai/sdk"
+import { createOpencodeServer } from "@abov3-ai/sdk"
 
 const server = await createOpencodeServer({
   hostname: "127.0.0.1",
@@ -65,10 +60,10 @@ console.log(`Server running at ${server.url}`)
 server.close()
 ```
 
-You can pass a configuration object to customize server behavior. The server still picks up your `opencode.json`, but you can override or add configuration inline:
+You can pass a configuration object to customize server behavior. The server still picks up your `abov3.json`, but you can override or add configuration inline:
 
 ```javascript
-import { createOpencodeServer } from "@opencode-ai/sdk"
+import { createOpencodeServer } from "@abov3-ai/sdk"
 
 const server = await createOpencodeServer({
   hostname: "127.0.0.1",
@@ -93,19 +88,17 @@ server.close()
 | `timeout`  | `number`      | Timeout in ms for server start | `5000`      |
 | `config`   | `Config`      | Configuration object           | `{}`        |
 
----
 
 ## Types
 
 The SDK includes TypeScript definitions for all API types. Import them directly:
 
 ```typescript
-import type { Session, Message, Part } from "@opencode-ai/sdk"
+import type { Session, Message, Part } from "@abov3-ai/sdk"
 ```
 
 All types are generated from the server's OpenAPI specification and available in the <a href={typesUrl}>types file</a>.
 
----
 
 ## Errors
 
@@ -119,13 +112,11 @@ try {
 }
 ```
 
----
 
 ## APIs
 
 The SDK exposes all server APIs through a type-safe client.
 
----
 
 ### App
 
@@ -134,7 +125,6 @@ The SDK exposes all server APIs through a type-safe client.
 | `app.log()`    | Write a log entry         | `boolean`                                   |
 | `app.agents()` | List all available agents | <a href={typesUrl}><code>Agent[]</code></a> |
 
----
 
 #### Examples
 
@@ -152,7 +142,6 @@ await client.app.log({
 const agents = await client.app.agents()
 ```
 
----
 
 ### Project
 
@@ -161,7 +150,6 @@ const agents = await client.app.agents()
 | `project.list()`    | List all projects   | <a href={typesUrl}><code>Project[]</code></a> |
 | `project.current()` | Get current project | <a href={typesUrl}><code>Project</code></a>   |
 
----
 
 #### Examples
 
@@ -173,7 +161,6 @@ const projects = await client.project.list()
 const currentProject = await client.project.current()
 ```
 
----
 
 ### Path
 
@@ -181,7 +168,6 @@ const currentProject = await client.project.current()
 | ------------ | ---------------- | ---------------------------------------- |
 | `path.get()` | Get current path | <a href={typesUrl}><code>Path</code></a> |
 
----
 
 #### Examples
 
@@ -190,7 +176,6 @@ const currentProject = await client.project.current()
 const pathInfo = await client.path.get()
 ```
 
----
 
 ### Config
 
@@ -199,7 +184,6 @@ const pathInfo = await client.path.get()
 | `config.get()`       | Get config info                   | <a href={typesUrl}><code>Config</code></a>                                                            |
 | `config.providers()` | List providers and default models | `{ providers: `<a href={typesUrl}><code>Provider[]</code></a>`, default: { [key: string]: string } }` |
 
----
 
 #### Examples
 
@@ -209,7 +193,6 @@ const config = await client.config.get()
 const { providers, default: defaults } = await client.config.providers()
 ```
 
----
 
 ### Sessions
 
@@ -235,7 +218,6 @@ const { providers, default: defaults } = await client.config.providers()
 | `session.unrevert({ path })`                               | Restore reverted messages          | Returns <a href={typesUrl}><code>Session</code></a>                                                                            |
 | `postSessionByIdPermissionsByPermissionId({ path, body })` | Respond to a permission request    | Returns `boolean`                                                                                                              |
 
----
 
 #### Examples
 
@@ -257,7 +239,6 @@ const result = await client.session.prompt({
 })
 ```
 
----
 
 ### Files
 
@@ -269,7 +250,6 @@ const result = await client.session.prompt({
 | `file.read({ query })`    | Read a file                  | `{ type: "raw" \| "patch", content: string }`                                               |
 | `file.status({ query? })` | Get status for tracked files | <a href={typesUrl}><code>File[]</code></a>                                                  |
 
----
 
 #### Examples
 
@@ -288,7 +268,6 @@ const content = await client.file.read({
 })
 ```
 
----
 
 ### TUI
 
@@ -304,7 +283,6 @@ const content = await client.file.read({
 | `tui.executeCommand({ body })` | Execute a command         | `boolean` |
 | `tui.showToast({ body })`      | Show toast notification   | `boolean` |
 
----
 
 #### Examples
 
@@ -319,7 +297,6 @@ await client.tui.showToast({
 })
 ```
 
----
 
 ### Auth
 
@@ -327,7 +304,6 @@ await client.tui.showToast({
 | ------------------- | ------------------------------ | --------- |
 | `auth.set({ ... })` | Set authentication credentials | `boolean` |
 
----
 
 #### Examples
 
@@ -338,7 +314,6 @@ await client.auth.set({
 })
 ```
 
----
 
 ### Events
 
@@ -346,7 +321,6 @@ await client.auth.set({
 | ------------------- | ------------------------- | ------------------------- |
 | `event.subscribe()` | Server-sent events stream | Server-sent events stream |
 
----
 
 #### Examples
 

@@ -1,13 +1,13 @@
 ---
 title: Intro
-description: Get started with opencode.
+description: Get started with abov3.
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 
-[**opencode**](/) is an AI coding agent built for the terminal.
+[**abov3**](/) is an AI coding agent built for the terminal.
 
-![opencode TUI with the opencode theme](../../assets/lander/screenshot.png)
+![abov3 TUI with the abov3 theme](../../assets/lander/screenshot.png)
 
 Let's get started.
 
@@ -15,7 +15,7 @@ Let's get started.
 
 #### Prerequisites
 
-To use opencode, you'll need:
+To use abov3, you'll need:
 
 1. A modern terminal emulator like:
 
@@ -30,10 +30,10 @@ To use opencode, you'll need:
 
 ## Install
 
-The easiest way to install opencode is through the install script.
+The easiest way to install abov3 is through the install script.
 
 ```bash
-curl -fsSL https://opencode.ai/install | bash
+curl -fsSL https://abov3.ai/install | bash
 ```
 
 You can also install it with the following:
@@ -42,68 +42,69 @@ You can also install it with the following:
 
   <Tabs>
     <TabItem label="npm">
-    ```bash
-    npm install -g opencode-ai
-    ```
-    </TabItem>
+      ```bash
+      npm install -g abov3-ai
+      ```
+      </TabItem>
     <TabItem label="Bun">
-    ```bash
-    bun install -g opencode-ai
-    ```
+      ```bash
+      bun install -g abov3-ai
+      ```
     </TabItem>
     <TabItem label="pnpm">
-    ```bash
-    pnpm install -g opencode-ai
-    ```
+  ```bash
+  pnpm install -g abov3-ai
+  ```
     </TabItem>
     <TabItem label="Yarn">
-    ```bash 
-    yarn global add opencode-ai
-    ```
+  ```bash 
+  yarn global add abov3-ai
+  ```
     </TabItem>
   </Tabs>
 
 - **Using Homebrew on macOS and Linux**
 
   ```bash
-  brew install sst/tap/opencode
+  brew install sst/tap/abov3
   ```
 
 - **Using Paru on Arch Linux**
 
   ```bash
-  paru -S opencode-bin
+  paru -S abov3-bin
   ```
 
 #### Windows
 
-Right now the automatic installation methods do not work properly on Windows. However you can grab the binary from the [Releases](https://github.com/sst/opencode/releases).
+Right now the automatic installation methods do not work properly on Windows. However you can grab the binary from the [Releases](https://github.com/fajardofahad/abov3-genesis-codeforger/releases).
 
 ---
 
 ## Configure
 
-With opencode you can use any LLM provider by configuring their API keys.
 
-We recommend signing up for [Claude Pro](https://www.anthropic.com/news/claude-pro) or [Max](https://www.anthropic.com/max), it's the most cost-effective way to use opencode.
+With abov3 you can use any LLM provider by configuring their API keys.
 
-Once you've signed up, run `opencode auth login` and select Anthropic.
+We recommend signing up for [Claude Pro](https://www.anthropic.com/news/claude-pro) or [Max](https://www.anthropic.com/max), it's the most cost-effective way to use abov3.
+
+Once you've signed up, run `abov3 auth login` and select Anthropic.
 
 ```bash
-$ opencode auth login
+$ abov3 auth login
 
-┌  Add credential
-│
-◆  Select provider
-│  ● Anthropic (recommended)
-│  ○ OpenAI
-│  ○ Google
-│  ○ Amazon Bedrock
-│  ○ Azure
-│  ○ DeepSeek
-│  ○ Groq
-│  ...
-└
+  Add credential
+
+  Select provider
+   Anthropic (recommended)
+   OpenAI
+   Google
+   Amazon Bedrock
+   Azure
+   DeepSeek
+   Groq
+  ...
+
 ```
 
 Alternatively, you can select one of the other providers. [Learn more](/docs/providers#directory).
@@ -119,33 +120,33 @@ you want to work on.
 cd /path/to/project
 ```
 
-And run opencode.
+And run abov3.
 
 ```bash
-opencode
+abov3
 ```
 
-Next, initialize opencode for the project by running the following command.
+Next, initialize abov3 for the project by running the following command.
 
 ```bash frame="none"
 /init
 ```
 
-This will get opencode to analyze your project and create an `AGENTS.md` file in
+This will get abov3 to analyze your project and create an `AGENTS.md` file in
 the project root.
 
 :::tip
 You should commit your project's `AGENTS.md` file to Git.
 :::
 
-This helps opencode understand the project structure and the coding patterns
+This helps abov3 understand the project structure and the coding patterns
 used.
 
 ---
 
 ## Usage
 
-You are now ready to use opencode to work on your project. Feel free to ask it
+You are now ready to use abov3 to work on your project. Feel free to ask it
 anything!
 
 If you are new to using an AI coding agent, here are some examples that might
@@ -155,7 +156,7 @@ help.
 
 ### Ask questions
 
-You can ask opencode to explain the codebase to you.
+You can ask abov3 to explain the codebase to you.
 
 :::tip
 Use the `@` key to fuzzy search for files in the project.
@@ -171,11 +172,11 @@ This is helpful if there's a part of the codebase that you didn't work on.
 
 ### Add features
 
-You can ask opencode to add new features to your project. Though we first recommend asking it to create a plan.
+You can ask abov3 to add new features to your project. Though we first recommend asking it to create a plan.
 
 1. **Create a plan**
 
-   opencode has a _Plan mode_ that disables its ability to make changes and
+  abov3 has a _Plan mode_ that disables its ability to make changes and
    instead suggest _how_ it'll implement the feature.
 
    Switch to it using the **Tab** key. You'll see an indicator for this in the lower right corner.
@@ -192,12 +193,12 @@ You can ask opencode to add new features to your project. Though we first recomm
    From this screen, the user can undelete a note or permanently delete it.
    ```
 
-   You want to give opencode enough details to understand what you want. It helps
-   to talk to it like you are talking to a junior developer on your team.
+  You want to give abov3 enough details to understand what you want. It helps
+    to talk to it like you are talking to a junior developer on your team.
 
    :::tip
-   Give opencode plenty of context and examples to help it understand what you
-   want.
+  Give abov3 plenty of context and examples to help it understand what you
+  want.
    :::
 
 2. **Iterate on the plan**
@@ -213,7 +214,7 @@ You can ask opencode to add new features to your project. Though we first recomm
    Drag and drop images into the terminal to add them to the prompt.
    :::
 
-   opencode can scan any images you give it and add them to the prompt. You can
+  abov3 can scan any images you give it and add them to the prompt. You can
    do this by dragging and dropping an image into the terminal.
 
 3. **Build the feature**
@@ -235,7 +236,7 @@ You can ask opencode to add new features to your project. Though we first recomm
 
 ### Make changes
 
-For more straightforward changes, you can ask opencode to directly build it
+For more straightforward changes, you can ask abov3 to directly build it
 without having to review the plan first.
 
 ```txt frame="none" "@packages/functions/src/settings.ts" "@packages/functions/src/notes.ts"
@@ -244,14 +245,14 @@ handled in the /notes route in @packages/functions/src/notes.ts and implement
 the same logic in @packages/functions/src/settings.ts
 ```
 
-You want to make sure you provide a good amount of detail so opencode makes the right
+You want to make sure you provide a good amount of detail so abov3 makes the right
 changes.
 
 ---
 
 ### Undo changes
 
-Let's say you ask opencode to make some changes.
+Let's say you ask abov3 to make some changes.
 
 ```txt frame="none" "@packages/functions/src/api/index.ts"
 Can you refactor the function in @packages/functions/src/api/index.ts?
@@ -264,14 +265,14 @@ using the `/undo` command.
 /undo
 ```
 
-opencode will now revert the changes you made and show your original message
+  abov3 will now revert the changes you made and show your original message
 again.
 
 ```txt frame="none" "@packages/functions/src/api/index.ts"
 Can you refactor the function in @packages/functions/src/api/index.ts?
 ```
 
-From here you can tweak the prompt and ask opencode to try again.
+From here you can tweak the prompt and ask abov3 to try again.
 
 :::tip
 You can run `/undo` multiple times to undo multiple changes.
@@ -287,7 +288,7 @@ Or you **can redo** the changes using the `/redo` command.
 
 ## Share
 
-The conversations that you have with opencode can be [shared with your
+The conversations that you have with abov3 can be [shared with your
 team](/docs/share).
 
 ```bash frame="none"
@@ -300,12 +301,12 @@ This will create a link to the current conversation and copy it to your clipboar
 Conversations are not shared by default.
 :::
 
-Here's an [example conversation](https://opencode.ai/s/4XP1fce5) with opencode.
+Here's an [example conversation](https://abov3.ai/s/4XP1fce5) with abov3.
 
 ---
 
 ## Customize
 
-And that's it! You are now a pro at using opencode.
+And that's it! You are now a pro at using abov3.
 
-To make it your own, we recommend [picking a theme](/docs/themes), [customizing the keybinds](/docs/keybinds), [configuring code formatters](/docs/formatters), [creating custom commands](/docs/commands), or playing around with the [opencode config](/docs/config).
+To make it your own, we recommend [picking a theme](/docs/themes), [customizing the keybinds](/docs/keybinds), [configuring code formatters](/docs/formatters), [creating custom commands](/docs/commands), or playing around with the [abov3 config](/docs/config).

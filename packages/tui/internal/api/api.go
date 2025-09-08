@@ -6,7 +6,7 @@ import (
 	"log"
 
 	tea "github.com/charmbracelet/bubbletea/v2"
-	"github.com/sst/opencode-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
 )
 
 type Request struct {

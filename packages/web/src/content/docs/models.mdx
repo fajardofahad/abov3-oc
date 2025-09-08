@@ -3,13 +3,13 @@ title: Models
 description: Configuring an LLM provider and model.
 ---
 
-opencode uses the [AI SDK](https://ai-sdk.dev/) and [Models.dev](https://models.dev) to support for **75+ LLM providers** and it supports running local models.
+abov3 uses the [AI SDK](https://ai-sdk.dev/) and [Models.dev](https://models.dev) to support for **75+ LLM providers** and it supports running local models.
 
 ---
 
 ## Providers
 
-Most popular providers are preloaded by default. If you've added the credentials for a provider through `opencode auth login`, they'll be available when you start opencode.
+Most popular providers are preloaded by default. If you've added the credentials for a provider through `abov3 auth login`, they'll be available when you start abov3.
 
 Learn more about [providers](/docs/providers).
 
@@ -35,7 +35,7 @@ Consider using one of the models we recommend.
 
 However, there are a only a few of them that are good at both generating code and tool calling.
 
-Here are the ones we recommend with opencode:
+Here are the ones we recommend with abov3:
 
 - Claude Sonnet 4
 - Claude Opus 4
@@ -49,11 +49,11 @@ Here are the ones we recommend with opencode:
 ## Set a default
 
 To set one of these as the default model, you can set the `model` key in your
-opencode config.
+abov3 config.
 
-```json title="opencode.json" {3}
+```json title="abov3.json" {3}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "model": "lmstudio/google/gemma-3n-e4b"
 }
 ```
@@ -68,9 +68,9 @@ If you've configured a [custom provider](/docs/providers#custom), the `provider_
 
 You can globally configure a model's options through the config.
 
-```jsonc title="opencode.jsonc" {7-12,19-24}
+```jsonc title="abov3.jsonc" {7-12,19-24}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "provider": {
     "openai": {
       "models": {
@@ -108,15 +108,15 @@ You can also configure these options for any agents that you are using. The agen
 
 ## Loading models
 
-When opencode starts up, it checks for models in the following priority order:
+When abov3 starts up, it checks for models in the following priority order:
 
 1. The `--model` or `-m` command line flag. The format is the same as in the config file: `provider_id/model_id`.
 
-2. The model list in the opencode config.
+2. The model list in the abov3 config.
 
-   ```json title="opencode.json"
+   ```json title="abov3.json"
    {
-     "$schema": "https://opencode.ai/config.json",
+     "$schema": "https://abov3.ai/config.json",
      "model": "anthropic/claude-sonnet-4-20250514"
    }
    ```

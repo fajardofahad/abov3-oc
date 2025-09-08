@@ -1,0 +1,9 @@
+{
+  "$schema": "https://abov3.ai/config.json",
+  "mcp": {
+    "weather": {
+      "type": "local",
+      "command": ["abov3", "x", "@h1deya/mcp-server-weather"]
+    }
+  }
+}

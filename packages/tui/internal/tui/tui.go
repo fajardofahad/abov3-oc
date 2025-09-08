@@ -15,21 +15,21 @@ import (
 	tea "github.com/charmbracelet/bubbletea/v2"
 	"github.com/charmbracelet/lipgloss/v2"
 
-	"github.com/sst/opencode-sdk-go"
-	"github.com/sst/opencode/internal/api"
-	"github.com/sst/opencode/internal/app"
-	"github.com/sst/opencode/internal/commands"
-	"github.com/sst/opencode/internal/completions"
-	"github.com/sst/opencode/internal/components/chat"
-	cmdcomp "github.com/sst/opencode/internal/components/commands"
-	"github.com/sst/opencode/internal/components/dialog"
-	"github.com/sst/opencode/internal/components/modal"
-	"github.com/sst/opencode/internal/components/status"
-	"github.com/sst/opencode/internal/components/toast"
-	"github.com/sst/opencode/internal/layout"
-	"github.com/sst/opencode/internal/styles"
-	"github.com/sst/opencode/internal/theme"
-	"github.com/sst/opencode/internal/util"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/api"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/app"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/commands"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/completions"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/chat"
+	cmdcomp "github.com/fajardofahad/abov3-genesis-codeforger/internal/components/commands"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/dialog"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/modal"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/status"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/toast"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/layout"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/styles"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/theme"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/util"
 )
 
 // InterruptDebounceTimeoutMsg is sent when the interrupt key debounce timeout expires
@@ -82,7 +82,7 @@ type Model struct {
 func (a Model) Init() tea.Cmd {
 	var cmds []tea.Cmd
 	// https://github.com/charmbracelet/bubbletea/issues/1440
-	// https://github.com/sst/opencode/issues/127
+	// https://github.com/fajardofahad/abov3-genesis-codeforger/issues/127
 	if !util.IsWsl() {
 		cmds = append(cmds, tea.RequestBackgroundColor)
 	}

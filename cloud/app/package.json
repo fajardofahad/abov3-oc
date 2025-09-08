@@ -1,11 +1,11 @@
 {
-  "name": "@opencode/cloud-app",
+  "name": "@abov3/cloud-app",
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "dev": "vinxi dev --host 0.0.0.0",
-    "dev:remote": "VITE_AUTH_URL=https://auth.dev.opencode.ai bun sst shell --stage=dev bun dev",
-    "build": "vinxi build && ../../packages/opencode/script/schema.ts ./.output/public/config.json",
+  "dev:remote": "VITE_AUTH_URL=https://auth.dev.abov3.ai bun sst shell --stage=dev bun dev",
+  "build": "vinxi build && ../../packages/abov3/script/schema.ts ./.output/public/config.json",
     "start": "vinxi start",
     "version": "0.6.4"
   },
@@ -17,7 +17,7 @@
     "@solidjs/start": "^1.1.0",
     "solid-js": "catalog:",
     "vinxi": "^0.5.7",
-    "@opencode/cloud-core": "workspace:*"
+  "@abov3/cloud-core": "workspace:*"
   },
   "engines": {
     "node": ">=22"

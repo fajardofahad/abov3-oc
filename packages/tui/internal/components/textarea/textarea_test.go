@@ -3,7 +3,7 @@ package textarea
 import (
 	"testing"
 
-	"github.com/sst/opencode/internal/attachment"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/attachment"
 )
 
 func TestRemoveAttachmentAtCursor_ConvertsToText_WhenCursorAfterAttachment(t *testing.T) {

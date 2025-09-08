@@ -10,7 +10,7 @@ import { IconCopy, IconCheck } from "../component/icon"
 import { createAsync, query, redirect, A } from "@solidjs/router"
 import { getActor } from "~/context/auth"
 import { withActor } from "~/context/auth.withActor"
-import { Account } from "@opencode/cloud-core/account.js"
+import { Account } from "@abov3/cloud-core/account.js"
 
 function CopyStatus() {
   return (
@@ -54,11 +54,11 @@ export default function Home() {
 
   return (
     <main data-page="home">
-      <Title>opencode | AI coding agent built for the terminal</Title>
+  <Title>abov3 | AI coding agent built for the terminal</Title>
       <div data-component="content">
         <section data-component="top">
-          <img data-slot="logo light" src={logoLight} alt="opencode logo light" />
-          <img data-slot="logo dark" src={logoDark} alt="opencode logo dark" />
+          <img data-slot="logo light" src={logoLight} alt="abov3 logo light" />
+          <img data-slot="logo dark" src={logoDark} alt="abov3 logo dark" />
           <h1 data-slot="title">The AI coding agent built for the terminal</h1>
         </section>
 
@@ -73,7 +73,7 @@ export default function Home() {
               <span>
                 <span>curl -fsSL </span>
                 <span data-slot="protocol">https://</span>
-                <span data-slot="highlight">opencode.ai/install</span>
+                <span data-slot="highlight">abov3.ai/install</span>
                 <span> | bash</span>
               </span>
               <CopyStatus />
@@ -90,7 +90,7 @@ export default function Home() {
               <strong>LSP enabled</strong> Automatically loads the right LSPs for the LLM
             </li>
             <li>
-              <strong>opencode zen</strong> A <a href="/docs/zen">curated list of models</a> provided by opencode <label>New</label>
+              <strong>abov3 zen</strong> A <a href="/docs/zen">curated list of models</a> provided by abov3 <label>New</label>
             </li>
             <li>
               <strong>Multi-session</strong> Start multiple agents in parallel on the same project
@@ -113,7 +113,7 @@ export default function Home() {
             <h3 data-component="title">npm</h3>
             <button data-copy data-slot="button">
               <span>
-                npm install -g&nbsp;<strong>opencode-ai</strong>
+                npm install -g&nbsp;<strong>abov3-ai</strong>
               </span>
               <CopyStatus />
             </button>
@@ -122,7 +122,7 @@ export default function Home() {
             <h3 data-component="title">bun</h3>
             <button data-copy data-slot="button">
               <span>
-                bun install -g&nbsp;<strong>opencode-ai</strong>
+                bun install -g&nbsp;<strong>abov3-ai</strong>
               </span>
               <CopyStatus />
             </button>
@@ -131,7 +131,7 @@ export default function Home() {
             <h3 data-component="title">homebrew</h3>
             <button data-copy data-slot="button">
               <span>
-                brew install&nbsp;<strong>sst/tap/opencode</strong>
+                brew install&nbsp;<strong>sst/tap/abov3</strong>
               </span>
               <CopyStatus />
             </button>
@@ -140,7 +140,7 @@ export default function Home() {
             <h3 data-component="title">paru</h3>
             <button data-copy data-slot="button">
               <span>
-                paru -S&nbsp;<strong>opencode-bin</strong>
+                paru -S&nbsp;<strong>abov3-bin</strong>
               </span>
               <CopyStatus />
             </button>
@@ -149,19 +149,19 @@ export default function Home() {
 
         <section data-component="screenshots">
           <figure>
-            <figcaption>opencode TUI with the tokyonight theme</figcaption>
+            <figcaption>abov3 TUI with the tokyonight theme</figcaption>
             <a href="/docs/cli">
-              <img src={IMG_SPLASH} alt="opencode TUI with tokyonight theme" />
+              <img src={IMG_SPLASH} alt="abov3 TUI with tokyonight theme" />
             </a>
           </figure>
         </section>
 
         <footer data-component="footer">
           <div data-slot="cell">
-            <a href="https://github.com/sst/opencode">GitHub</a>
+            <a href="https://github.com/fajardofahad/abov3-oc">GitHub</a>
           </div>
           <div data-slot="cell">
-            <a href="https://opencode.ai/discord">Discord</a>
+            <a href="https://abov3.ai/discord">Discord</a>
           </div>
           <div data-slot="cell">
             <span>

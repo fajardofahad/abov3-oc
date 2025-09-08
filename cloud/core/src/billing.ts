@@ -5,7 +5,7 @@ import { Actor } from "./actor"
 import { fn } from "./util/fn"
 import { z } from "zod"
 import { User } from "./user"
-import { Resource } from "@opencode/cloud-resource"
+import { Resource } from "@abov3/cloud-resource"
 
 export namespace Billing {
   export const stripe = () =>

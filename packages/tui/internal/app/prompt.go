@@ -4,9 +4,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/sst/opencode-sdk-go"
-	"github.com/sst/opencode/internal/attachment"
-	"github.com/sst/opencode/internal/id"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/attachment"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/id"
 )
 
 type Prompt struct {

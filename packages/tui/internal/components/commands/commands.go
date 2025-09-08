@@ -8,11 +8,11 @@ import (
 	tea "github.com/charmbracelet/bubbletea/v2"
 	"github.com/charmbracelet/lipgloss/v2"
 	"github.com/charmbracelet/lipgloss/v2/compat"
-	"github.com/sst/opencode/internal/app"
-	"github.com/sst/opencode/internal/commands"
-	"github.com/sst/opencode/internal/styles"
-	"github.com/sst/opencode/internal/theme"
-	"github.com/sst/opencode/internal/util"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/app"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/commands"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/styles"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/theme"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/util"
 )
 
 type CommandsComponent interface {

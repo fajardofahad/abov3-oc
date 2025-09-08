@@ -11,5 +11,5 @@ await $`bun run --conditions=development ../../opencode/src/index.ts generate > 
 await $`stl builds create --branch main --pull --allow-empty --+target go`
 
 await $`rm -rf ../go`
-await $`mv opencode-go/ ../go`
+await $`mv abov3-go/ ../go`
 await $`rm -rf ../go/.git`

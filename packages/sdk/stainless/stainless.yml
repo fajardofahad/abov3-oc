@@ -2,12 +2,12 @@
 
 organization:
   name: opencode
-  docs: "https://opencode.ai/docs"
+  docs: "https://abov3.ai/docs"
   contact: "support@sst.dev"
 
 targets:
   typescript:
-    package_name: "@opencode-ai/sdk"
+    package_name: "@abov3-ai/sdk"
     production_repo: "sst/opencode-sdk-js"
     publish:
       npm: true

@@ -1,5 +1,5 @@
 {
-  "project": "opencode",
+  "project": "abov3",
   "openapi_spec": "openapi.json",
   "stainless_config": "stainless.yml"
 }

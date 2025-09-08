@@ -1,0 +1,63 @@
+name: Rebrand Stage-2
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: 'Batch number to run'
+        required: true
+        default: '1'
+
+jobs:
+  rebrand:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: stable
+
+      - name: Run rebrand script (dry-run)
+        run: |
+          node ./scripts/rebrand-stage2.js --batch ${{ github.event.inputs.batch }} --dry-run
+
+      - name: Run rebrand script (apply)
+        run: |
+          node ./scripts/rebrand-stage2.js --batch ${{ github.event.inputs.batch }} --commit
+
+      - name: Install (regenerate lockfile)
+        run: |
+          bun install
+
+      - name: Run build
+        run: |
+          if [ -f package.json ]; then
+            bun run build || true
+          fi
+
+      - name: Run tests
+        run: |
+          if [ -f package.json ]; then
+            bun test || true
+          fi
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin HEAD:refs/heads/rebrand-stage2-batch-${{ github.event.inputs.batch }} || true

@@ -1,5 +1,5 @@
 {
-  "name": "@opencode/cloud-scripts",
+  "name": "@abov3/cloud-scripts",
   "version": "0.6.4",
   "$schema": "https://json.schemastore.org/package.json",
   "private": true,
@@ -9,7 +9,7 @@
     "shell": "sst shell"
   },
   "dependencies": {
-    "@opencode/cloud-core": "workspace:*",
+  "@abov3/cloud-core": "workspace:*",
     "tsx": "4.20.5"
   },
   "devDependencies": {

@@ -18,11 +18,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sst/opencode-sdk-go/internal"
-	"github.com/sst/opencode-sdk-go/internal/apierror"
-	"github.com/sst/opencode-sdk-go/internal/apiform"
-	"github.com/sst/opencode-sdk-go/internal/apiquery"
-	"github.com/sst/opencode-sdk-go/internal/param"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apierror"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apiform"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apiquery"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/param"
 )
 
 func getDefaultHeaders() map[string]string {

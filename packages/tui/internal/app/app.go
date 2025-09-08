@@ -11,14 +11,14 @@ import (
 	"log/slog"
 
 	tea "github.com/charmbracelet/bubbletea/v2"
-	"github.com/sst/opencode-sdk-go"
-	"github.com/sst/opencode/internal/clipboard"
-	"github.com/sst/opencode/internal/commands"
-	"github.com/sst/opencode/internal/components/toast"
-	"github.com/sst/opencode/internal/id"
-	"github.com/sst/opencode/internal/styles"
-	"github.com/sst/opencode/internal/theme"
-	"github.com/sst/opencode/internal/util"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/clipboard"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/commands"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/toast"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/id"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/styles"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/theme"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/util"
 )
 
 type Message struct {
@@ -137,7 +137,7 @@ func New(
 		appState.Theme = configInfo.Theme
 	}
 
-	themeEnv := os.Getenv("OPENCODE_THEME")
+	themeEnv := os.Getenv("ABOV3_THEME")
 	if themeEnv != "" {
 		appState.Theme = themeEnv
 	}

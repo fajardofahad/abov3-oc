@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/sst/opencode-sdk-go/internal/apijson"
-	"github.com/sst/opencode-sdk-go/internal/apiquery"
-	"github.com/sst/opencode-sdk-go/internal/param"
-	"github.com/sst/opencode-sdk-go/internal/requestconfig"
-	"github.com/sst/opencode-sdk-go/option"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apijson"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apiquery"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/param"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/requestconfig"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/option"
 )
 
 // ProjectService contains methods and other services that help with interacting

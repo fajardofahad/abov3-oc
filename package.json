@@ -1,11 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "opencode",
+  "name": "abov3-genesis-codeforger",
   "private": true,
   "type": "module",
-  "packageManager": "bun@1.2.19",
   "scripts": {
-    "dev": "bun run --conditions=development packages/opencode/src/index.ts",
+  "dev": "bun run --conditions=development packages/abov3/src/index.ts",
     "typecheck": "bun run --filter='*' typecheck",
     "generate": "(cd packages/sdk && ./js/script/generate.ts) && (cd packages/sdk/stainless && ./generate.ts)",
     "postinstall": "./script/hooks"
@@ -37,7 +36,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sst/opencode"
+    "url": "https://github.com/fajardofahad/abov3-genesis-codeforger"
   },
   "license": "MIT",
   "prettier": {

@@ -3,7 +3,7 @@ package app
 import (
 	"testing"
 
-	"github.com/sst/opencode-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
 )
 
 // TestFindModelByFullID tests the findModelByFullID function

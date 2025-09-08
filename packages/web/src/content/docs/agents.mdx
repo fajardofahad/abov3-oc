@@ -1,4 +1,78 @@
+```json title="abov3.json"
+{
+  "$schema": "https://abov3.ai/config.json",
+```json title="abov3.json"
+{
+  "$schema": "https://abov3.ai/config.json",
+```json title="abov3.json"
+{
+  "$schema": "https://abov3.ai/config.json",
+```json title="abov3.json" {7-18}
+{
+  "$schema": "https://abov3.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
+  "agent": {
+    "build": {
+  "$schema": "https://abov3.ai/config.json",
+  "agent": {
+    "build": {
+```json title="abov3.json"
+{
+  "$schema": "https://abov3.ai/config.json",
+```json title="abov3.json" {6,7}
+{
+  "$schema": "https://abov3.ai/config.json",
+```json title="abov3.json"
+{
+  "$schema": "https://abov3.ai/config.json",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "{file:./prompts/build.txt}",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "anthropic/claude-haiku-4-20250514",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "mode": "subagent",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    }
+  }
+}
+```
+```json title="abov3.json"
+{
+  "agent": {
+    "deep-thinker": {
+      "description": "Agent that uses high reasoning effort for complex problems",
+      "model": "openai/gpt-5",
+      "reasoningEffort": "high",
+      "textVerbosity": "low"
+    }
+  }
+}
+```
+
 ---
+
 title: Agents
 description: Configure and use specialized agents.
 ---
@@ -15,7 +89,7 @@ You can switch between agents during a session or invoke them with the `@` menti
 
 ## Types
 
-There are two types of agents in opencode; primary agents and subagents.
+There are two types of agents in ABOV3; primary agents and subagents.
 
 ---
 
@@ -27,7 +101,7 @@ Primary agents are the main assistants you interact with directly. You can cycle
 You can use the **Tab** key to switch between primary agents during a session.
 :::
 
-opencode comes with two built-in primary agents, **Build** and **Plan**. We'll
+ABOV3 comes with two built-in primary agents, **Build** and **Plan**. We'll
 look at these below.
 
 ---
@@ -36,13 +110,13 @@ look at these below.
 
 Subagents are specialized assistants that primary agents can invoke for specific tasks. You can also manually invoke them by **@ mentioning** them in your messages.
 
-opencode comes with one built-in subagent, **General**. We'll look at this below.
+ABOV3 comes with one built-in subagent, **General**. We'll look at this below.
 
 ---
 
 ## Built-in
 
-opencode comes with two built-in primary agents and one built-in subagent.
+ABOV3 comes with two built-in primary agents and one built-in subagent.
 
 ---
 
@@ -106,11 +180,11 @@ You can customize the built-in agents or create your own through configuration. 
 
 ### JSON
 
-Configure agents in your `opencode.json` config file:
+Configure agents in your `abov3.json` config file:
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "agent": {
     "build": {
       "mode": "primary",
@@ -151,10 +225,10 @@ Configure agents in your `opencode.json` config file:
 
 You can also define agents using markdown files. Place them in:
 
-- Global: `~/.config/opencode/agent/`
-- Per-project: `.opencode/agent/`
+- Global: `~/.config/abov3/agent/`
+- Per-project: `.abov3/agent/`
 
-```markdown title="~/.config/opencode/agent/review.md"
+```markdown title="~/.config/abov3/agent/review.md"
 ---
 description: Reviews code for quality and best practices
 mode: subagent
@@ -190,7 +264,7 @@ Let's look at these configuration options in detail.
 
 Use the `description` option to provide a brief description of what the agent does and when to use it.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "review": {
@@ -210,18 +284,19 @@ Control the randomness and creativity of the LLM's responses with the `temperatu
 
 Lower values make responses more focused and deterministic, while higher values increase creativity and variability.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "plan": {
       "temperature": 0.1
     },
     "creative": {
-      "temperature": 0.8
+      "temperature": 0.7
     }
   }
 }
 ```
+
 
 Temperature values typically range from 0.0 to 1.0:
 
@@ -229,7 +304,7 @@ Temperature values typically range from 0.0 to 1.0:
 - **0.3-0.5**: Balanced responses with some creativity, good for general development tasks
 - **0.6-1.0**: More creative and varied responses, useful for brainstorming and exploration
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "analyze": {
@@ -247,7 +322,7 @@ Temperature values typically range from 0.0 to 1.0:
 }
 ```
 
-If no temperature is specified, opencode uses model-specific defaults; typically 0 for most models, 0.55 for Qwen models.
+If no temperature is specified, abov3 uses model-specific defaults; typically 0 for most models, 0.55 for Qwen models.
 
 ---
 
@@ -255,7 +330,7 @@ If no temperature is specified, opencode uses model-specific defaults; typically
 
 Set to `true` to disable the agent.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "review": {
@@ -271,7 +346,7 @@ Set to `true` to disable the agent.
 
 Specify a custom system prompt file for this agent with the `prompt` config. The prompt file should contain instructions specific to the agent's purpose.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "review": {
@@ -281,7 +356,7 @@ Specify a custom system prompt file for this agent with the `prompt` config. The
 }
 ```
 
-This path is relative to where the config file is located. So this works for both the global opencode config and the project specific config.
+This path is relative to where the config file is located. So this works for both the global abov3 config and the project specific config.
 
 ---
 
@@ -289,7 +364,7 @@ This path is relative to where the config file is located. So this works for bot
 
 Use the `model` config to override the default model for this agent. Useful for using different models optimized for different tasks. For example, a faster model for planning, a more capable model for implementation.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "plan": {
@@ -305,7 +380,7 @@ Use the `model` config to override the default model for this agent. Useful for 
 
 Control which tools are available in this agent with the `tools` config. You can enable or disable specific tools by setting them to `true` or `false`.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "readonly": {
@@ -324,7 +399,7 @@ Control which tools are available in this agent with the `tools` config. You can
 
 You can also use wildcards to control multiple tools at once. For example, to disable all tools from an MCP server:
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "readonly": {
@@ -372,11 +447,11 @@ Each permission can be set to allow, ask, or deny.
 
 - allow, ask, deny
 
-Configure permissions globally in opencode.json.
+Configure permissions globally in abov3.json.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "permission": {
     "edit": "ask",
     "bash": "allow",
@@ -387,9 +462,9 @@ Configure permissions globally in opencode.json.
 
 You can override permissions per agent in JSON.
 
-```json title="opencode.json" {7-18}
+```json title="abov3.json" {7-18}
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "agent": {
     "build": {
       "permission": {
@@ -408,7 +483,7 @@ You can override permissions per agent in JSON.
 
 You can also set permissions in Markdown agents.
 
-```markdown title="~/.config/opencode/agent/review.md"
+```markdown title="~/.config/abov3/agent/review.md"
 ---
 description: Code review without edits
 mode: subagent
@@ -425,7 +500,7 @@ Bash permissions support granular patterns for fine-grained control.
 
 ```json title="Allow most, ask for risky, deny terraform"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "permission": {
     "bash": {
       "*": "allow",
@@ -440,7 +515,7 @@ If you provide a granular bash map, the default becomes ask unless you set \* ex
 
 ```json title="Granular defaults to ask"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "permission": {
     "bash": {
       "git status": "allow"
@@ -457,7 +532,7 @@ Specific bash rules can override a global default.
 
 ```json title="Global ask, agent allows safe commands"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "permission": { "bash": "ask" },
   "agent": {
     "build": {
@@ -477,7 +552,7 @@ For quick reference, here are common setups.
 
 ```json title="Read-only reviewer"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "agent": {
     "review": {
       "permission": { "edit": "deny", "bash": "deny", "webfetch": "allow" }
@@ -488,7 +563,7 @@ For quick reference, here are common setups.
 
 ```json title="Planning agent that can browse but cannot change code"
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://abov3.ai/config.json",
   "agent": {
     "plan": {
       "permission": { "edit": "deny", "bash": "deny", "webfetch": "ask" }
@@ -507,7 +582,7 @@ See the full permissions guide for more patterns.
 
 Control the agent's mode with the `mode` config. The `mode` option is used to determine how the agent can be used.
 
-```json title="opencode.json"
+```json title="abov3.json"
 {
   "agent": {
     "review": {
@@ -527,7 +602,7 @@ Any other options you specify in your agent configuration will be **passed throu
 
 For example, with OpenAI's reasoning models, you can control the reasoning effort:
 
-```json title="opencode.json" {6,7}
+```json title="abov3.json" {6,7}
 {
   "agent": {
     "deep-thinker": {
@@ -549,7 +624,7 @@ These additional options are model and provider-specific. Check your provider's 
 You can create new agents using the following command:
 
 ```bash
-opencode agent create
+abov3 agent create
 ```
 
 This interactive command will:
@@ -579,14 +654,14 @@ Here are some common use cases for different agents.
 Here are some examples agents you might find useful.
 
 :::tip
-Do you have an agent you'd like to share? [Submit a PR](https://github.com/sst/opencode).
+Do you have an agent you'd like to share? [Submit a PR](https://github.com/fajardofahad/abov3-genesis-codeforger).
 :::
 
 ---
 
 ### Documentation agent
 
-```markdown title="~/.config/opencode/agent/docs-writer.md"
+```markdown title="~/.config/abov3/agent/docs-writer.md"
 ---
 description: Writes and maintains project documentation
 mode: subagent
@@ -608,7 +683,7 @@ Focus on:
 
 ### Security auditor
 
-```markdown title="~/.config/opencode/agent/security-auditor.md"
+```markdown title="~/.config/abov3/agent/security-auditor.md"
 ---
 description: Performs security audits and identifies vulnerabilities
 mode: subagent

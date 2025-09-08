@@ -1,4 +1,4 @@
-module github.com/sst/opencode-sdk-go
+module github.com/fajardofahad/abov3-genesis-codeforger-sdk-go
 
 go 1.21
 

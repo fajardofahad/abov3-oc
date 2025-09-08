@@ -65,8 +65,8 @@ func LoadThemesFromJSON() error {
 // The hierarchy is (from lowest to highest priority):
 // 1. Built-in themes (embedded)
 // 2. USER_CONFIG/opencode/themes/*.json
-// 3. PROJECT_ROOT/.opencode/themes/*.json
-// 4. CWD/.opencode/themes/*.json
+// 3. PROJECT_ROOT/.abov3/themes/*.json
+// 4. CWD/.abov3/themes/*.json
 func LoadThemesFromDirectories(userConfig, projectRoot, cwd string) error {
 	if err := LoadThemesFromJSON(); err != nil {
 		return fmt.Errorf("failed to load built-in themes: %w", err)

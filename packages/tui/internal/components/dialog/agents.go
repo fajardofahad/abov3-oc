@@ -7,14 +7,14 @@ import (
 	"github.com/charmbracelet/bubbles/v2/key"
 	tea "github.com/charmbracelet/bubbletea/v2"
 	"github.com/lithammer/fuzzysearch/fuzzy"
-	"github.com/sst/opencode-sdk-go"
-	"github.com/sst/opencode/internal/app"
-	"github.com/sst/opencode/internal/components/list"
-	"github.com/sst/opencode/internal/components/modal"
-	"github.com/sst/opencode/internal/layout"
-	"github.com/sst/opencode/internal/styles"
-	"github.com/sst/opencode/internal/theme"
-	"github.com/sst/opencode/internal/util"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/app"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/list"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/components/modal"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/layout"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/styles"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/theme"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/util"
 )
 
 const (

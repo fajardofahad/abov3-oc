@@ -13,4 +13,4 @@
 
 ## Debugging
 
-- To test opencode in the `packages/opencode` directory you can run `bun dev`
+- To test ABOV3 in the `packages/opencode` directory you can run `bun dev`

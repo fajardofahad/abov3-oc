@@ -1,25 +1,25 @@
 ---
 title: GitLab
-description: Use opencode in GitLab issues and merge requests.
+description: Use abov3 in GitLab issues and merge requests.
 ---
 
-opencode integrates with your GitLab workflow.
-Mention `@opencode` in a comment, and opencode will execute tasks within your GitLab CI pipeline.
+abov3 integrates with your GitLab workflow.
+Mention `@abov3` in a comment, and abov3 will execute tasks within your GitLab CI pipeline.
 
 ---
 
 ## Features
 
-- **Triage issues**: Ask opencode to look into an issue and explain it to you.
-- **Fix and implement**: Ask opencode to fix an issue or implement a feature.
+- **Triage issues**: Ask abov3 to look into an issue and explain it to you.
+- **Fix and implement**: Ask abov3 to fix an issue or implement a feature.
   It will work create a new branch and raised a merge request with the changes.
-- **Secure**: opencode runs on your GitLab runners.
+- **Secure**: abov3 runs on your GitLab runners.
 
 ---
 
 ## Setup
 
-opencode runs in your GitLab CI/CD pipeline, here's what you'll need to set it up:
+abov3 runs in your GitLab CI/CD pipeline, here's what you'll need to set it up:
 
 :::tip
 Check out the [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/agent_assistant/) for up to date instructions.
@@ -38,34 +38,34 @@ Check out the [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/
    ```yaml
    image: node:22-slim
    commands:
-     - echo "Installing opencode"
-     - npm install --global opencode-ai
+    - echo "Installing abov3"
+   - npm install --global abov3-ai
      - echo "Installing glab"
-     - export GITLAB_TOKEN=$GITLAB_TOKEN_OPENCODE
+  - export GITLAB_TOKEN=$GITLAB_TOKEN_ABOV3
      - apt-get update --quiet && apt-get install --yes curl wget gpg git && rm --recursive --force /var/lib/apt/lists/*
      - curl --silent --show-error --location "https://raw.githubusercontent.com/upciti/wakemeops/main/assets/install_repository" | bash
      - apt-get install --yes glab
      - echo "Configuring glab"
      - echo $GITLAB_HOST
-     - echo "Creating opencode auth configuration"
-     - mkdir --parents ~/.local/share/opencode
+    - echo "Creating abov3 auth configuration"
+  - mkdir --parents ~/.local/share/abov3
      - |
-       cat > ~/.local/share/opencode/auth.json << EOF
+  cat > ~/.local/share/abov3/auth.json << EOF
        {
          "anthropic": {
            "type": "api",
            "key": "$ANTHROPIC_API_KEY"
          }
-       }
+  }
        EOF
-     - echo "Configuring git"
-     - git config --global user.email "opencode@gitlab.com"
-     - git config --global user.name "Opencode"
+    - echo "Configuring git"
+    - git config --global user.email "abov3@gitlab.com"
+    - git config --global user.name "Abov3"
      - echo "Testing glab"
      - glab issue list
-     - echo "Running Opencode"
+  - echo "Running Abov3"
      - |
-       opencode run "
+  abov3 run "
        You are an AI assistant helping with GitLab operations.
    
        Context: $AI_FLOW_CONTEXT
@@ -102,7 +102,7 @@ Check out the [**GitLab docs**](https://docs.gitlab.com/user/duo_agent_platform/
        fi
    variables:
      - ANTHROPIC_API_KEY
-     - GITLAB_TOKEN_OPENCODE
+  - GITLAB_TOKEN_ABOV3
      - GITLAB_HOST
    ```
 
@@ -117,7 +117,7 @@ You can refer to the [GitLab CLI agents docs](https://docs.gitlab.com/user/duo_a
 Here are some examples of how you can use opencode in GitLab.
 
 :::tip
-You can configure to use a different trigger phrase than `@opencode`.
+You can configure to use a different trigger phrase than `@abov3`.
 :::
 
 - **Explain an issue**
@@ -125,27 +125,27 @@ You can configure to use a different trigger phrase than `@opencode`.
   Add this comment in a GitLab issue.
 
   ```
-  @opencode explain this issue
+  @abov3 explain this issue
   ```
 
-  opencode will read the issue and reply with a clear explanation.
+  abov3 will read the issue and reply with a clear explanation.
 
 - **Fix an issue**
 
   In a GitLab issue, say:
 
   ```
-  @opencode fix this
+  @abov3 fix this
   ```
 
-  opencode will create a new branch, implement the changes, and open a merge request with the changes.
+  abov3 will create a new branch, implement the changes, and open a merge request with the changes.
 
 - **Review merge requests**
 
   Leave the following comment on a GitLab merge request.
 
   ```
-  @opencode review this merge request
+  @abov3 review this merge request
   ```
 
-  opencode will review the merge request and provide feedback.
+  abov3 will review the merge request and provide feedback.

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@opencode-ai/plugin",
+  "name": "@abov3-ai/plugin",
   "version": "0.6.4",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
     "dist"
   ],
   "dependencies": {
-    "@opencode-ai/sdk": "workspace:*"
+  "@abov3-ai/sdk": "workspace:*"
   },
   "devDependencies": {
     "@tsconfig/node22": "catalog:",

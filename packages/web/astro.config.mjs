@@ -31,7 +31,7 @@ export default defineConfig({
     configSchema(),
     solidJs(),
     starlight({
-      title: "opencode",
+  title: "ABOV3",
       lastUpdated: true,
       expressiveCode: { themes: ["github-light", "github-dark"] },
       social: [
@@ -106,7 +106,7 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    "/discord": "https://discord.gg/opencode",
+    "/discord": "https://discord.gg/abov3",
   },
 })
 

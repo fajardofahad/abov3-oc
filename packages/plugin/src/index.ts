@@ -9,7 +9,7 @@ import type {
   Part,
   Auth,
   Config,
-} from "@opencode-ai/sdk"
+} from "@abov3-ai/sdk"
 import type { BunShell } from "./shell"
 
 export type PluginInput = {

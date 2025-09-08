@@ -3,8 +3,8 @@ package qr
 import (
 	"strings"
 
-	"github.com/sst/opencode/internal/styles"
-	"github.com/sst/opencode/internal/theme"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/styles"
+	"github.com/fajardofahad/abov3-genesis-codeforger/internal/theme"
 	"rsc.io/qr"
 )
 

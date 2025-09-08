@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/sst/opencode-sdk-go/internal/apijson"
+	"github.com/fajardofahad/abov3-genesis-codeforger-sdk-go/internal/apijson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

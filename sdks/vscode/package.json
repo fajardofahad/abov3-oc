@@ -1,12 +1,12 @@
 {
-  "name": "opencode",
-  "displayName": "opencode",
-  "description": "opencode for VS Code",
+  "name": "abov3",
+  "displayName": "ABOV3: Genesis CodeForger",
+  "description": "ABOV3: Genesis CodeForger for VS Code",
   "version": "0.6.4",
   "publisher": "sst-dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sst/opencode"
+  "url": "https://github.com/fajardofahad/abov3-genesis-codeforger"
   },
   "license": "MIT",
   "icon": "images/icon.png",
@@ -25,38 +25,38 @@
   "contributes": {
     "commands": [
       {
-        "command": "opencode.openTerminal",
-        "title": "Open opencode",
+  "command": "abov3.openTerminal",
+  "title": "Open ABOV3",
         "icon": {
           "light": "images/button-dark.svg",
           "dark": "images/button-light.svg"
         }
       },
       {
-        "command": "opencode.openNewTerminal",
-        "title": "Open opencode in new tab",
+  "command": "abov3.openNewTerminal",
+  "title": "Open ABOV3 in new tab",
         "icon": {
           "light": "images/button-dark.svg",
           "dark": "images/button-light.svg"
         }
       },
       {
-        "command": "opencode.addFilepathToTerminal",
-        "title": "Add Filepath to Terminal"
-      }
+          "command": "abov3.addFilepathToTerminal",
+          "title": "Add Filepath to Terminal"
+        }
     ],
     "menus": {
       "editor/title": [
         {
-          "command": "opencode.openNewTerminal",
-          "group": "navigation"
-        }
+            "command": "abov3.openNewTerminal",
+            "group": "navigation"
+          }
       ]
     },
     "keybindings": [
       {
-        "command": "opencode.openTerminal",
-        "title": "Run opencode",
+        "command": "abov3.openTerminal",
+        "title": "Run ABOV3",
         "key": "cmd+escape",
         "mac": "cmd+escape",
         "win": "ctrl+escape",
@@ -71,8 +71,8 @@
         "linux": "ctrl+shift+escape"
       },
       {
-        "command": "opencode.addFilepathToTerminal",
-        "title": "opencode: Insert At-Mentioned",
+  "command": "abov3.addFilepathToTerminal",
+  "title": "ABOV3: Insert At-Mentioned",
         "key": "cmd+alt+k",
         "mac": "cmd+alt+k",
         "win": "ctrl+alt+K",

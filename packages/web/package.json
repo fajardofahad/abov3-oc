@@ -1,5 +1,5 @@
 {
-  "name": "@opencode/web",
+  "name": "@abov3/web",
   "type": "module",
   "version": "0.6.4",
   "scripts": {
@@ -34,7 +34,7 @@
     "toolbeam-docs-theme": "0.4.6"
   },
   "devDependencies": {
-    "opencode": "workspace:*",
+  "abov3": "workspace:*",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   }

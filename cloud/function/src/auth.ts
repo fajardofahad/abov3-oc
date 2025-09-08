@@ -6,11 +6,11 @@ import { THEME_OPENAUTH } from "@openauthjs/openauth/ui/theme"
 import { GithubProvider } from "@openauthjs/openauth/provider/github"
 import { GoogleOidcProvider } from "@openauthjs/openauth/provider/google"
 import { CloudflareStorage } from "@openauthjs/openauth/storage/cloudflare"
-import { Account } from "@opencode/cloud-core/account.js"
-import { Workspace } from "@opencode/cloud-core/workspace.js"
-import { Actor } from "@opencode/cloud-core/actor.js"
-import { Resource } from "@opencode/cloud-resource"
-import { Database } from "@opencode/cloud-core/drizzle/index.js"
+import { Account } from "@abov3/cloud-core/account.js"
+import { Workspace } from "@abov3/cloud-core/workspace.js"
+import { Actor } from "@abov3/cloud-core/actor.js"
+import { Resource } from "@abov3/cloud-resource"
+import { Database } from "@abov3/cloud-core/drizzle/index.js"
 
 type Env = {
   AuthStorage: KVNamespace
@@ -29,7 +29,7 @@ export const subjects = createSubjects({
 
 const MY_THEME: Theme = {
   ...THEME_OPENAUTH,
-  logo: "https://opencode.ai/favicon.svg",
+  logo: "https://abov3.ai/favicon.svg",
 }
 
 export default {
@@ -103,7 +103,7 @@ export default {
           const emails = (await fetch("https://api.github.com/user/emails", {
             headers: {
               Authorization: `Bearer ${response.tokenset.access}`,
-              "User-Agent": "opencode",
+              "User-Agent": "abov3",
               Accept: "application/vnd.github+json",
             },
           }).then((x) => x.json())) as any

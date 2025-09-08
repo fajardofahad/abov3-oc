@@ -1,4 +1,4 @@
-import { Account } from "@opencode/cloud-core/account.js"
+import { Account } from "@abov3/cloud-core/account.js"
 import { redirect } from "@solidjs/router"
 import type { APIEvent } from "@solidjs/start/server"
 import { withActor } from "~/context/auth.withActor"

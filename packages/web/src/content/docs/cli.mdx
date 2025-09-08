@@ -1,38 +1,93 @@
 ---
 title: CLI
-description: opencode CLI options and commands.
+description: ABOV3 CLI options and commands.
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 
-The opencode CLI by default starts the [TUI](/docs/tui) when run without any arguments.
+The ABOV3 CLI by default starts the [TUI](/docs/tui) when run without any arguments.
 
 ```bash
-opencode
+abov3
 ```
 
-But it also accepts commands as documented on this page. This allows you to interact with opencode programmatically.
+But it also accepts commands as documented on this page. This allows you to interact with abov3 programmatically.
 
 ```bash
-opencode run "Explain how closures work in JavaScript"
+abov3 run "Explain how closures work in JavaScript"
 ```
 
 
+title: CLI
+description: ABOV3 CLI options and commands.
+## Commands
+
+The ABOV3 CLI also has the following commands.
+
+abov3
+---
+
+### agent
+
+Manage agents for ABOV3.
+abov3 run "Explain how closures work in JavaScript"
+
+```bash
+```
+
+---
+
+#### create
+Create a new agent with custom configuration.
+
+```bash
+abov3 agent create
+```
+
+abov3 agent [command]
+This command will guide you through creating a new agent with a custom system prompt and tool configuration.
+
+
+### auth
+
+Command to manage credentials and login for providers.
+
+```bash
+abov3 auth [command]
+
+---
+title: CLI
+description: ABOV3 CLI options and commands.
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+
+The ABOV3 CLI by default starts the [TUI](/docs/tui) when run without any arguments.
+
+```bash
+abov3
+```
+
+But it also accepts commands as documented on this page. This allows you to interact with ABOV3 programmatically.
+
+```bash
+abov3 run "Explain how closures work in JavaScript"
+```
 
 ---
 
 ## Commands
 
-The opencode CLI also has the following commands.
+The ABOV3 CLI also has the following commands.
 
 ---
 
 ### agent
 
-Manage agents for opencode.
+Manage agents for ABOV3.
 
 ```bash
-opencode agent [command]
+abov3 agent [command]
 ```
 
 ---
@@ -42,7 +97,7 @@ opencode agent [command]
 Create a new agent with custom configuration.
 
 ```bash
-opencode agent create
+abov3 agent create
 ```
 
 This command will guide you through creating a new agent with a custom system prompt and tool configuration.
@@ -54,20 +109,21 @@ This command will guide you through creating a new agent with a custom system pr
 Command to manage credentials and login for providers.
 
 ```bash
-opencode auth [command]
+abov3 auth [command]
 ```
 
 ---
 
 #### login
 
-opencode is powered by the provider list at [Models.dev](https://models.dev), so you can use `opencode auth login` to configure API keys for any provider you'd like to use. This is stored in `~/.local/share/opencode/auth.json`.
+
+ABOV3 is powered by the provider list at [Models.dev](https://models.dev), so you can use `abov3 auth login` to configure API keys for any provider you'd like to use. This is stored in `~/.local/share/abov3/auth.json`.
 
 ```bash
-opencode auth login
+abov3 auth login
 ```
 
-When opencode starts up it loads the providers from the credentials file. And if there are any keys defined in your environments or a `.env` file in your project.
+When ABOV3 starts up it loads the providers from the credentials file. And if there are any keys defined in your environments or a `.env` file in your project.
 
 ---
 
@@ -76,13 +132,13 @@ When opencode starts up it loads the providers from the credentials file. And if
 Lists all the authenticated providers as stored in the credentials file.
 
 ```bash
-opencode auth list
+abov3 auth list
 ```
 
 Or the short version.
 
 ```bash
-opencode auth ls
+abov3 auth ls
 ```
 
 ---
@@ -92,7 +148,7 @@ opencode auth ls
 Logs you out of a provider by clearing it from the credentials file.
 
 ```bash
-opencode auth logout
+abov3 auth logout
 ```
 
 ---
@@ -102,7 +158,7 @@ opencode auth logout
 Manage the GitHub agent for repository automation.
 
 ```bash
-opencode github [command]
+abov3 github [command]
 ```
 
 ---
@@ -112,7 +168,7 @@ opencode github [command]
 Install the GitHub agent in your repository.
 
 ```bash
-opencode github install
+abov3 github install
 ```
 
 This sets up the necessary GitHub Actions workflow and guides you through the configuration process. [Learn more](/docs/github).
@@ -124,7 +180,7 @@ This sets up the necessary GitHub Actions workflow and guides you through the co
 Run the GitHub agent. This is typically used in GitHub Actions.
 
 ```bash
-opencode github run
+abov3 github run
 ```
 
 ##### Flags
@@ -141,7 +197,7 @@ opencode github run
 List all available models from configured providers.
 
 ```bash
-opencode models
+abov3 models
 ```
 
 This command displays all models available across your configured providers in the format `provider/model`.
@@ -150,16 +206,16 @@ This command displays all models available across your configured providers in t
 
 ### run
 
-Run opencode in non-interactive mode by passing a prompt directly.
+Run ABOV3 in non-interactive mode by passing a prompt directly.
 
 ```bash
-opencode run [message..]
+abov3 run [message..]
 ```
 
 This is useful for scripting, automation, or when you want a quick answer without launching the full TUI. For example.
 
-```bash "opencode run"
-opencode run Explain the use of context in Go
+```bash "abov3 run"
+abov3 run Explain the use of context in Go
 ```
 
 #### Flags
@@ -176,13 +232,13 @@ opencode run Explain the use of context in Go
 
 ### serve
 
-Start a headless opencode server for API access. Check out the [server docs](/docs/server) for the full HTTP interface.
+Start a headless ABOV3 server for API access. Check out the [server docs](/docs/server) for the full HTTP interface.
 
 ```bash
-opencode serve
+abov3 serve
 ```
 
-This starts an HTTP server that provides API access to opencode functionality without the TUI interface.
+This starts an HTTP server that provides API access to ABOV3 functionality without the TUI interface.
 
 #### Flags
 
@@ -195,22 +251,22 @@ This starts an HTTP server that provides API access to opencode functionality wi
 
 ### upgrade
 
-Updates opencode to the latest version or a specific version.
+Updates ABOV3 to the latest version or a specific version.
 
 ```bash
-opencode upgrade [target]
+abov3 upgrade [target]
 ```
 
 To upgrade to the latest version.
 
 ```bash
-opencode upgrade
+abov3 upgrade
 ```
 
 To upgrade to a specific version.
 
 ```bash
-opencode upgrade v0.1.48
+abov3 upgrade v0.1.48
 ```
 
 #### Flags
@@ -223,7 +279,7 @@ opencode upgrade v0.1.48
 
 ## Flags
 
-The opencode CLI takes the following global flags.
+The ABOV3 CLI takes the following global flags.
 
 | Flag           | Short | Description                                |
 | -------------- | ----- | ------------------------------------------ |

@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"sync"
 
-	opencode "github.com/sst/opencode-sdk-go"
+	opencode "github.com/fajardofahad/abov3-genesis-codeforger-sdk-go"
 )
 
 func sanitizeValue(val any) any {
