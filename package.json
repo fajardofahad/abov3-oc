@@ -6,13 +6,10 @@
   "packageManager": "bun@1.2.21",
   "scripts": {
     "dev": "bun run --conditions=development packages/opencode/src/index.ts",
-    "typecheck": "bun run --filter='*' typecheck",
-    "generate": "(cd packages/sdk && ./js/script/generate.ts) && (cd packages/sdk/stainless && ./generate.ts)",
-    "postinstall": "./script/hooks"
+    "typecheck": "bun run --filter='*' typecheck"
   },
   "workspaces": {
     "packages": [
-      "cloud/*",
       "packages/*",
       "packages/sdk/js"
     ],
@@ -29,12 +26,8 @@
       "solid-js": "1.9.9"
     }
   },
-  "dependencies": {
-    "pulumi-stripe": "0.0.24"
-  },
   "devDependencies": {
-    "prettier": "3.6.2",
-    "sst": "3.17.13"
+    "prettier": "3.6.2"
   },
   "repository": {
     "type": "git",
@@ -52,8 +45,5 @@
     "tree-sitter",
     "tree-sitter-bash",
     "web-tree-sitter"
-  ],
-  "patchedDependencies": {
-    "@solidjs/start@1.1.7": "patches/@solidjs%2Fstart@1.1.7.patch"
-  }
+  ]
 }
